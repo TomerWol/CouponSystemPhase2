@@ -1,0 +1,34 @@
+
+<table border="1">
+	<tr style="background: lightblue; color: blue">
+		<th colspan="2" align="center">Search for a Company</th>
+	</tr>
+
+	<tr>
+		<td>Enter Company id :</td>
+		<td><input type="number" placeholder="Company's id"
+			ng-model="main.id" /></td>
+	</tr>
+</table>
+
+<p>
+	<button ng-click="main.getCompany()">get</button>
+</p>
+
+<p style="color: red;" ng-show="main.failed.flag">{{main.console.text}}</p>
+
+<table ng-show="main.succes.flag" border="1">
+	<tr style="background: lightblue; color: blue">
+		<th>ID</th>
+		<th>NAME</th>
+		<th>PASSWORD</th>
+		<th>EMAIL</th>
+	</tr>
+
+	<tr>
+		<td>{{main.comp.obj.id}}</td>
+		<td>{{main.comp.obj.compName}}</td>
+		<td>{{main.comp.obj.password}}</td>
+		<td>{{main.comp.obj.email}}</td>
+	</tr>
+</table>

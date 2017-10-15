@@ -1,0 +1,47 @@
+<table border="1">
+	<tr style="background: lightblue; color: blue">
+		<th colspan="2" align="center">Search for Coupon</th>
+	</tr>
+
+	<tr>
+		<td>Choose Coupon type :</td>
+		<td><select ng-model="main.type">
+				<option>RESTURANS</option>
+				<option>ELECTRICITY</option>
+				<option>FOOD</option>
+				<option>HEALTH</option>
+				<option>SPORTS</option>
+				<option>CAMPING</option>
+				<option>TRAVELLING</option>
+		</select></td>
+	</tr>
+</table>
+
+
+<p>
+	<button ng-click="main.getCoupon()">Get</button>
+</p>
+
+<p style="color: red;" ng-show="main.failed.flag">{{main.console.text}}</p>
+
+<table ng-show="main.succes.flag" border="1">
+	<tr style="background: lightblue; color: blue">
+		<th>ID</th>
+		<th>TITLE</th>
+		<th>START DATE</th>
+		<th>END DATE</th>
+		<th>TYPE</th>
+		<th>MESSAGE</th>
+		<th>IMAGE</th>
+	</tr>
+
+	<tr ng-repeat="coupon in main.coupons.all">
+		<td>{{coupon.id}}</td>
+		<td>{{coupon.title}}</td>
+		<td>{{coupon.startDate}}</td>
+		<td>{{coupon.endDate}}</td>
+		<td>{{coupon.type}}</td>
+		<td>{{coupon.message}}</td>
+		<td><img alt="Coupon img" ng-src="{{coupon.image}}" height="120" width="120"></td>
+	</tr>
+</table>

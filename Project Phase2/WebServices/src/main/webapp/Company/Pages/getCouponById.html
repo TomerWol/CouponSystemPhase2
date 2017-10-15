@@ -1,0 +1,43 @@
+<table border="1">
+	<tr style="background: lightblue; color: blue">
+		<th colspan="2" align="center">Search for Coupon</th>
+	</tr>
+
+	<tr>
+		<td>Enter Coupon's id :</td>
+		<td><input type="number" placeholder="id" ng-model="main.id" /></td>
+	</tr>
+</table>
+
+<p>
+	<button ng-click="main.getCoupon()">Search</button>
+</p>
+
+<p style="color: red;" ng-show="main.failed.flag">{{main.console.text}}</p>
+
+<table ng-show="main.succes.flag" border="1">
+	<tr style="background: lightblue; color: blue">
+		<th>ID</th>
+		<th>TITLE</th>
+		<th>START DATE</th>
+		<th>END DATE</th>
+		<th>AMOUNT</th>
+		<th>TYPE</th>
+		<th>MESSAGE</th>
+		<th>PRICE</th>
+		<th>IMAGE</th>
+	</tr>
+
+	<tr>
+		<td>{{main.coupon.obj.id}}</td>
+		<td>{{main.coupon.obj.title}}</td>
+		<td>{{main.coupon.obj.startDate}}</td>
+		<td>{{main.coupon.obj.endDate}}</td>
+		<td>{{main.coupon.obj.amount}}</td>
+		<td>{{main.coupon.obj.type}}</td>
+		<td>{{main.coupon.obj.message}}</td>
+		<td>{{main.coupon.obj.price}}</td>
+		<td><img alt="Coupon img" ng-src="{{main.coupon.obj.image}}" height="120" width="120"></td>
+	</tr>
+</table>
+

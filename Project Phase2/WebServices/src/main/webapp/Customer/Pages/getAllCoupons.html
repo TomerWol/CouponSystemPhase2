@@ -1,0 +1,30 @@
+
+
+<table border="1">
+	<tr style="background: lightblue; color: black">
+		<th colspan="7" align="center">Show All Coupons</th>
+	</tr>
+	<tr style="background: lightblue; color: blue">
+		<th>ID</th>
+		<th>TITLE</th>
+		<th>START DATE</th>
+		<th>END DATE</th>
+		<th>TYPE</th>
+		<th>MESSAGE</th>
+		<th>IMAGE</th>
+	</tr>
+
+	<tr ng-repeat="coupon in main.coupons.all">
+		<td>{{coupon.id}}</td>
+		<td>{{coupon.title}}</td>
+		<td>{{coupon.startDate}}</td>
+		<td>{{coupon.endDate}}</td>
+		<td>{{coupon.type}}</td>
+		<td>{{coupon.message}}</td>
+		<td><img alt="Coupon img" ng-src="{{coupon.image}}" height="120" width="120"></td>
+	</tr>
+</table>
+
+<p>
+	<button ng-click="main.refreshTable()">refresh Table</button>
+</p>

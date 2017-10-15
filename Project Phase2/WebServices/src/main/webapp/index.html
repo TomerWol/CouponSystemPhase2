@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+</head>
+<script src="autoLogin.js"></script>
+<body onload="autoLogin()">
+	<h1 align="center">Welcome To Coupon World</h1>
+	<form action="Login" method="post">
+
+
+		<table align="center" border="1">
+			<tr style="color: black">
+				<th colspan="2" align="center">Please Login</th>
+			</tr>
+
+			<tr>
+				<td>Enter user name :</td>
+				<td><input id="user" type="text" name="userName"></td>
+			</tr>
+			<tr>
+				<td>Enter password :</td>
+				<td><input id="pass" type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td>Choose Client Type :</td>
+				<td><select id="type" name="Type">
+						<option>Admin</option>
+						<option>Company</option>
+						<option>Customer</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>
+				<input type="checkbox" name="remember">remember me
+				</td>
+				<td align="center"><input id="submit" type="submit" value="Enter"></td>
+			</tr>
+		</table>
+
+
+	</form>
+
+</body>
+</html>

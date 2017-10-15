@@ -1,0 +1,45 @@
+<table border="1">
+	<tr style="background: lightblue; color: blue">
+		<th colspan="2" align="center">Delete a Coupon</th>
+	</tr>
+
+	<tr>
+		<td>Enter Coupon id :</td>
+		<td><input type="number" placeholder="id" ng-model="main.id" /></td>
+	</tr>
+</table>
+<p>
+	<button ng-click="main.deleteCoupon()">Delete</button>
+</p>
+
+<p style="color: red;" ng-show="main.failed.flag">{{main.console.text}}</p>
+<p style="color: green;" ng-show="main.succes.flag">{{main.console.text}}</p>
+
+<table border="1">
+	<tr style="background: lightblue; color: blue">
+		<th>ID</th>
+		<th>TITLE</th>
+		<th>START DATE</th>
+		<th>END DATE</th>
+		<th>AMOUNT</th>
+		<th>TYPE</th>
+		<th>MESSAGE</th>
+		<th>PRICE</th>
+		<th>IMAGE</th>
+	</tr>
+
+	<tr ng-repeat="coupon in main.coupons.all">
+		<td>{{coupon.id}}</td>
+		<td>{{coupon.title}}</td>
+		<td>{{coupon.startDate}}</td>
+		<td>{{coupon.endDate}}</td>
+		<td>{{coupon.amount}}</td>
+		<td>{{coupon.type}}</td>
+		<td>{{coupon.message}}</td>
+		<td>{{coupon.price}}</td>
+		<td><img alt="Coupon img" ng-src="{{coupon.image}}" height="120" width="120"></td>
+	</tr>
+</table>
+<p>
+	<button ng-click="main.refreshTable()">refresh Table</button>
+</p>

@@ -1,0 +1,38 @@
+<table border="1">
+	<tr style="background: lightblue; color: blue">
+		<th colspan="2" align="center">Delete Company</th>
+	</tr>
+
+	<tr>
+		<td>Enter Company id :</td>
+		<td><input type="number" placeholder="Company's id"
+			ng-model="main.id" /></td>
+	</tr>
+</table>
+
+<p>
+	<button ng-click="main.deleteCompany()">delete</button>
+</p>
+
+<p style="color: red;" ng-show="main.failed.flag">{{main.console.text}}</p>
+<p style="color: green;" ng-show="main.succes.flag">{{main.console.text}}</p>
+
+<table border="1">
+	<tr style="background: lightblue; color: blue">
+		<th>ID</th>
+		<th>NAME</th>
+		<th>PASSWORD</th>
+		<th>EMAIL</th>
+	</tr>
+
+	<tr ng-repeat="comp in main.comps.all">
+		<td>{{comp.id}}</td>
+		<td>{{comp.compName}}</td>
+		<td>{{comp.password}}</td>
+		<td>{{comp.email}}</td>
+	</tr>
+</table>
+<p>
+	<button ng-click="main.refreshTable()">Refresh Table</button>
+</p>
+

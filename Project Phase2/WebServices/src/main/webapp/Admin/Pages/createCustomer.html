@@ -1,0 +1,46 @@
+
+<table border="1">
+	<tr style="background: lightblue; color: blue">
+		<th colspan="2" align="center">Create Customer</th>
+	</tr>
+
+	<tr>
+		<td>Enter Customer id :</td>
+		<td><input type="number" placeholder="Customer's id"
+			ng-model="main.customer.id" /></td>
+	</tr>
+	<tr>
+		<td>Enter Customer name :</td>
+		<td><input type="text" placeholder="Customer's name"
+			ng-model="main.customer.custName" /></td>
+	</tr>
+	<tr>
+		<td>Enter Customer password :</td>
+		<td><input type="password" placeholder="Customer's password"
+			ng-model="main.customer.password" /></td>
+	</tr>
+</table>
+<p>
+	<button ng-click="main.createCustomer()">Submit</button>
+</p>
+
+<p style="color: red" ng-show="main.failed.flag">{{main.console.text}}</p>
+<p style="color: green" ng-show="main.succes.flag">{{main.console.text}}</p>
+
+<table border="1">
+	<tr style="background: lightblue; color: blue">
+		<th>ID</th>
+		<th>NAME</th>
+		<th>PASSWORD</th>
+	</tr>
+
+	<tr ng-repeat="customer in main.customers.all">
+		<td>{{customer.id}}</td>
+		<td>{{customer.custName}}</td>
+		<td>{{customer.password}}</td>
+	</tr>
+</table>
+<p>
+	<button ng-click="main.refreshTable()">refresh Table</button>
+</p>
+

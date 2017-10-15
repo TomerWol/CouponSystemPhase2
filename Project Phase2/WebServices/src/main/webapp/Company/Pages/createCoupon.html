@@ -1,0 +1,103 @@
+
+<table border="1">
+	<tr style="background: lightblue; color: blue">
+		<th colspan="2" align="center">Create Coupon</th>
+	</tr>
+
+	<tr>
+		<td>Enter Coupon id :</td>
+		<td><input type="number" placeholder="id"
+			ng-model="main.coupon.id" /></td>
+	</tr>
+	<tr>
+		<td>Enter Coupon title :</td>
+		<td><input type="text" placeholder="title"
+			ng-model="main.coupon.title" /></td>
+	</tr>
+	<tr>
+		<td>Enter Coupon Start Date :</td>
+		<td><input type="date" placeholder="yyyy-mm-dd"
+			ng-model="main.coupon.startDate" /></td>
+	</tr>
+	<tr>
+		<td>Enter Coupon End Date :</td>
+		<td><input type="date" placeholder="yyyy-mm-dd"
+			ng-model="main.coupon.endDate" /></td>
+	</tr>
+	<tr>
+		<td>Enter Coupon amount :</td>
+		<td><input type="number" placeholder="0"
+			ng-model="main.coupon.amount" /></td>
+	</tr>
+	<tr>
+		<td>Choose Coupon type :</td>
+		<td><select ng-model="main.coupon.type">
+				<option>RESTURANS</option>
+				<option>ELECTRICITY</option>
+				<option>FOOD</option>
+				<option>HEALTH</option>
+				<option>SPORTS</option>
+				<option>CAMPING</option>
+				<option>TRAVELLING</option>
+		</select></td>
+	</tr>
+	<tr>
+		<td>Enter Coupon message :</td>
+		<td><input type="text" placeholder="message"
+			ng-model="main.coupon.message" /></td>
+	</tr>
+	<tr>
+		<td>Enter Coupon price :</td>
+		<td><input type="number" placeholder="0"
+			ng-model="main.coupon.price" /></td>
+	</tr>
+	<tr>
+		<td>Choose Coupon image :</td>
+		<td><select ng-model="main.coupon.image">
+				<option>img/resturans.jpg</option>
+				<option>img/electricity.jpg</option>
+				<option>img/food.jpg</option>
+				<option>img/health.jpg</option>
+				<option>img/sports.jpg</option>
+				<option>img/camping.jpg</option>
+				<option>img/travelling.jpg</option>
+			</select>
+		</td>
+	</tr>
+</table>
+
+<p>
+	<button ng-click="main.createCoupon()">Create</button>
+</p>
+
+<p style="color: red;" ng-show="main.failed.flag">{{main.console.text}}</p>
+<p style="color: green;" ng-show="main.succes.flag">{{main.console.text}}</p>
+
+<table border="1">
+	<tr style="background: lightblue; color: blue">
+		<th>ID</th>
+		<th>TITLE</th>
+		<th>START DATE</th>
+		<th>END DATE</th>
+		<th>AMOUNT</th>
+		<th>TYPE</th>
+		<th>MESSAGE</th>
+		<th>PRICE</th>
+		<th>IMAGE</th>
+	</tr>
+
+	<tr ng-repeat="coupon in main.coupons.all">
+		<td>{{coupon.id}}</td>
+		<td>{{coupon.title}}</td>
+		<td>{{coupon.startDate}}</td>
+		<td>{{coupon.endDate}}</td>
+		<td>{{coupon.amount}}</td>
+		<td>{{coupon.type}}</td>
+		<td>{{coupon.message}}</td>
+		<td>{{coupon.price}}</td>
+		<td><img alt="Coupon img" ng-src="{{coupon.image}}" height="120" width="120"></td>
+	</tr>
+</table>
+<p>
+	<button ng-click="main.refreshTable()">refresh Table</button>
+</p>

@@ -1,4 +1,4 @@
-﻿package CouponSystem.WebServices;
+package CouponSystem.WebServices;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -219,5 +219,4 @@ public class AdminResource {
 		return Response.ok(entity).status(200).build();
 	}
 	
-
 }

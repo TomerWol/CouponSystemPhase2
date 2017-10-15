@@ -1,4 +1,4 @@
-package CouponSystem.WebServices;
+﻿package CouponSystem.WebServices;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -219,6 +219,5 @@ public class AdminResource {
 		return Response.ok(entity).status(200).build();
 	}
 	
-	//בחלק א' של הפרויקט שכחתי לעשות מתודה בצד של הלקוח שמראה לו את כל הקופונים הקיימים וישנו מתודה כזאת בחלק של אדמין ולכן נאלצתי לעשות את זה דרך האדמין כדי לא לשנות את חלק א
-	//בחלק הזה רק לקוח כביכול משתמש  כדי לראות את כל הקופונים שהוא יכול לרכוש ,לכן אני יוצר פה לוגין פקטיבי כדי שיוכל לראות את כל הקופונים הקיימים באת רכישת קופונים
+
 }
